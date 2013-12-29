@@ -1,0 +1,9 @@
+name: firstplugin
+main: io.github.doctorluk.firstplugin.firstplugin
+version: 0.1
+commands:
+   killradius:
+      description: Kills specified animals within a specified radius
+      usage: /killradius <animaltype> [radius]
+      permission: firstplugin.killradius
+      permission-message: You don't have <permission>
