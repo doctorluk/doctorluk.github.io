@@ -50,9 +50,6 @@ public class firstplugin extends JavaPlugin {
     	if(cmd.getName().equalsIgnoreCase("killradius")){
     		if (sender instanceof Player) {
     			
-    			if(args.length == 0) // No arguments specified
-    				return false;
-    			
     			if(args.length == 1 && args[0].matches("\\d+") ){ // Arguments are radius only
     				Player player = (Player)sender;
     				
@@ -91,11 +88,12 @@ public class firstplugin extends JavaPlugin {
     				return true;
     			}
     			
-    			if(args.length > 2)
-    				return false;
+    			return false; // In case no arguments match
     			
     		}
-    		return true;
+    		else
+    			getLogger().info("This command can only be run as a player on the server!");
+    		return false;
     	}
     	return false; 
     }
