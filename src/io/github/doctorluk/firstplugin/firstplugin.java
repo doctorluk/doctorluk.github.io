@@ -60,6 +60,8 @@ public class firstplugin extends JavaPlugin {
     				List <Entity> entities = player.getNearbyEntities(radius, radius, radius);
     				int count = 0;
     				for(Entity ent:entities){
+    					if(!(ent instanceof Animals))
+    						continue;
 						count++;
 						Animals ani = (Animals)ent;
 						ani.remove();
