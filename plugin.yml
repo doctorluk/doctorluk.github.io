@@ -2,8 +2,13 @@ name: firstplugin
 main: io.github.doctorluk.firstplugin.firstplugin
 version: 0.1
 commands:
-   killradius:
-      description: Kills specified animals within a specified radius
-      usage: /killradius <animaltype> [radius]
-      permission: firstplugin.killradius
+#   killradius:
+#      description: Kills specified animals within a specified radius
+#      usage: /killradius <animaltype> [radius]
+#      permission: firstplugin.killradius
+#      permission-message: You don't have <permission>
+   swapchests:
+      description: Swaps the contents of two left-clicked chests
+      usage: /swapchests
+      permission: firstplugin.swapchests
       permission-message: You don't have <permission>
