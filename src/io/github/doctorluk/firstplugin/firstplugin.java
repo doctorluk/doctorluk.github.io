@@ -153,16 +153,13 @@ public class firstplugin extends JavaPlugin implements Listener {
 		}
     }
     
-    
+    /*
+     * Example command usage:
+     * killradius [radius] -> Kills all animals within iRadius of the player's position
+     * killradius chicken [radius] -> Kills all chickens within iRadius of the player's position 
+     */
     @Override
     public boolean onCommand(CommandSender sender, Command cmd, String label, String[] args){
-    	
-    	/*
-         * Example command usage:
-         * killradius [radius] -> Kills all animals within iRadius of the player's position
-         * killradius chicken [radius] -> Kills all chickens within iRadius of the player's position 
-         */
-    	
     	if(cmd.getName().equalsIgnoreCase("killradius")){
     		if (sender instanceof Player) {
     			
