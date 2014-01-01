@@ -25,16 +25,16 @@ public class swapchests extends JavaPlugin implements Listener {
 	public Map<Player, Boolean> swapchestsActive = new HashMap<Player, Boolean>();  // Is player currently using /swapchests?
 	
 	@Override
-    public void onEnable(){
-		
+	public void onEnable() {
+
 		// Puts all already online players into pluginActive with value = false
 		for (Player player : this.getServer().getOnlinePlayers()) {
 			swapchestsActive.put(player, false);
 		}
-		
+
 		// Register Events in this class
 		getServer().getPluginManager().registerEvents(this, this);
-    }
+	}
  
     @Override
     public void onDisable() {
