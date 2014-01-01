@@ -26,8 +26,6 @@ public class swapchests extends JavaPlugin implements Listener {
 	
 	@Override
 	public void onEnable() {
-
-		// Puts all already online players into pluginActive with value = false
 		for (Player player : this.getServer().getOnlinePlayers()) {
 			swapchestsActive.put(player, false);
 		}
