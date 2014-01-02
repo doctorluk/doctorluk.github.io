@@ -1,5 +1,5 @@
-name: firstplugin
-main: io.github.doctorluk.firstplugin.firstplugin
+name: swapchests
+main: io.github.doctorluk.swapchests.swapchests
 version: 0.1
 commands:
 #   killradius:
@@ -10,5 +10,5 @@ commands:
    swapchests:
       description: Swaps the contents of two left-clicked chests
       usage: /swapchests
-      permission: firstplugin.swapchests
+      permission: swapchests.swap
       permission-message: You don't have <permission>
