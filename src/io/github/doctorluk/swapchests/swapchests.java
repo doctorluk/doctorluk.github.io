@@ -10,6 +10,7 @@ import org.bukkit.command.Command;
 import org.bukkit.command.CommandSender;
 import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
+import org.bukkit.event.EventPriority;
 import org.bukkit.event.Listener;
 import org.bukkit.event.block.Action;
 import org.bukkit.event.player.PlayerInteractEvent;
@@ -38,7 +39,7 @@ public class swapchests extends JavaPlugin implements Listener {
     public void onDisable() {
     }
     
-    @EventHandler
+    @EventHandler(priority = EventPriority.MONITOR)
     public void onLogin(PlayerLoginEvent event) {
     	swapchestsActive.put(event.getPlayer(), false);
     }
@@ -57,7 +58,7 @@ public class swapchests extends JavaPlugin implements Listener {
     	}
     }
     
-    @EventHandler
+    @EventHandler(priority = EventPriority.MONITOR)
     public void onChestHit(PlayerInteractEvent event){
     	if( event.getAction() == Action.LEFT_CLICK_BLOCK && event.getClickedBlock().getType() == Material.CHEST ) {
     		Chest chest = (Chest)event.getClickedBlock().getState();

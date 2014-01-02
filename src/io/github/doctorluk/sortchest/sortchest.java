@@ -12,6 +12,7 @@ import org.bukkit.command.Command;
 import org.bukkit.command.CommandSender;
 import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
+import org.bukkit.event.EventPriority;
 import org.bukkit.event.Listener;
 import org.bukkit.event.block.Action;
 import org.bukkit.event.player.PlayerInteractEvent;
@@ -25,16 +26,12 @@ public class sortchest extends JavaPlugin implements Listener {
 	public Map<Player, Boolean> sortchestActive = new HashMap<Player, Boolean>();  // Is player currently using /swapchests?
 	
 	private void sortInventory(Chest chest, Player player){
-		List<ItemStack> list = new ArrayList<ItemStack>();
 		ItemStack[] inventory = chest.getInventory().getContents();
 		ItemStack inv;
-		int ii = 0;
 		for(int i = 0; i < inventory.length; i++){
 			inv = inventory[i];
 			if(inv == null)
 				continue;
-			list.add(inv);
-			ii++;
 			getLogger().info("There is " + inv.getAmount() + " of " + inv.getType() + " in slot " + i);
 			player.sendMessage("There is " + inv.getAmount() + " of " + inv.getType() + " in slot " + i);
 		}
@@ -54,7 +51,7 @@ public class sortchest extends JavaPlugin implements Listener {
     public void onDisable() {
     }
     
-    @EventHandler
+    @EventHandler(priority = EventPriority.MONITOR)
     public void onLogin(PlayerLoginEvent event) {
     	sortchestActive.put(event.getPlayer(), false);
     }
@@ -67,7 +64,7 @@ public class sortchest extends JavaPlugin implements Listener {
     	}
     }
     
-    @EventHandler
+    @EventHandler(priority = EventPriority.MONITOR)
     public void onChestHit(PlayerInteractEvent event){
     	if( event.getAction() == Action.LEFT_CLICK_BLOCK && event.getClickedBlock().getType() == Material.CHEST ) {
     		Chest chest = (Chest)event.getClickedBlock().getState();
