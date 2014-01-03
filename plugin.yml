@@ -1,5 +1,5 @@
-name: swapchests
-main: io.github.doctorluk.swapchests.swapchests
+name: sortchest
+main: io.github.doctorluk.sortchest.sortchest
 version: 0.1
 commands:
 #   killradius:
@@ -7,8 +7,8 @@ commands:
 #      usage: /killradius <animaltype> [radius]
 #      permission: firstplugin.killradius
 #      permission-message: You don't have <permission>
-   swapchests:
+   sortchest:
       description: Swaps the contents of two left-clicked chests
-      usage: /swapchests
-      permission: swapchests.swap
+      usage: /sortchest
+      permission: sortchest.sort
       permission-message: You don't have <permission>

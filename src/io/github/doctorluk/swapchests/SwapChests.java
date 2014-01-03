@@ -19,7 +19,7 @@ import org.bukkit.event.player.PlayerQuitEvent;
 import org.bukkit.inventory.ItemStack;
 import org.bukkit.plugin.java.JavaPlugin;
 
-public class swapchests extends JavaPlugin implements Listener {
+public class SwapChests extends JavaPlugin implements Listener {
 
 	public Map<Player, Chest> chest1 = new HashMap<Player, Chest>(); // Player <-> 1. Chest
 	public Map<Player, Chest> chest2 = new HashMap<Player, Chest>(); // Player <-> 2. Chest

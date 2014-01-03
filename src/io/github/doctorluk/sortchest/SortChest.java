@@ -1,9 +1,6 @@
 package io.github.doctorluk.sortchest;
 
-import java.util.ArrayList;
-import java.util.Collections;
 import java.util.HashMap;
-import java.util.List;
 import java.util.Map;
 
 import org.bukkit.Material;
@@ -21,7 +18,7 @@ import org.bukkit.event.player.PlayerQuitEvent;
 import org.bukkit.inventory.ItemStack;
 import org.bukkit.plugin.java.JavaPlugin;
 
-public class sortchest extends JavaPlugin implements Listener {
+public class SortChest extends JavaPlugin implements Listener {
 
 	public Map<Player, Boolean> sortchestActive = new HashMap<Player, Boolean>();  // Is player currently using /swapchests?
 	
@@ -32,8 +29,8 @@ public class sortchest extends JavaPlugin implements Listener {
 			inv = inventory[i];
 			if(inv == null)
 				continue;
-			getLogger().info("There is " + inv.getAmount() + " of " + inv.getType() + " in slot " + i);
-			player.sendMessage("There is " + inv.getAmount() + " of " + inv.getType() + " in slot " + i);
+			getLogger().info("There is " + inv.getAmount() + " of " + inv.getType().getId() + " in slot " + i);
+			player.sendMessage("There is " + inv.getAmount() + " of " + inv.getType().ordinal() + " in slot " + i);
 		}
 	}
 	
